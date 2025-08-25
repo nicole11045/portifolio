@@ -5,8 +5,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Portifolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    
+    <!-- CABEÇALHO -->
+    <header>
+        <h1>Meu Portfólio</h1>
+        <!-- MENU -->
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contatos">Contatos</a></li>
+            </ul>
+        </nav>
+    </header>
+ 
+    <!-- SEÇÃO SOBRE -->
+    <section id="sobre" class="section">
+        <h2>Sobre Mim</h2>
+        <img src="./images/perfil.jpeg" alt="Foto de Perfil" class="perfil">
+        <p>
+            Oii! Meu nome é Nicole Silva, sou aluna do curso Técnico de Desenvolvimento de sistemas
+            na escola Monsenhor Sarrion e este é meu portfólio. Aqui você encontra alguns projetos que desenvolvi
+            durante o curso.
+        </p>
+    </section>
+ 
+    <!-- SEÇÃO PROJETOS -->
+    <section id="projetos" class="section">
+        <h2>Meus Projetos</h2>
+        <div class="projetos-container">
+            <div class="card">
+                <img src="https://picsum.photos/300/200?random=1" alt="Projeto 1" loading="lazy">
+                <h3>Projeto 1</h3>
+                <p>Descrição do Projeto 1.</p>
+            </div>
+ 
+            <div class="card">
+                <img src="https://picsum.photos/300/200?random=2" alt="Projeto 2" loading="lazy">
+                <h3>Projeto 2</h3>
+                <p>Descrição do Projeto 2.</p>
+            </div>
+ 
+            <div class="card">
+                <img src="https://picsum.photos/300/200?random=3" alt="Projeto 3" loading="lazy">
+                <h3>Projeto 3</h3>
+                <p>Descrição do Projeto 3.</p>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- SEÇÃO CONTATO -->
+    <section id="contatos" class="section">
+        <h2>Contatos</h2>
+        <p class="subtitle">Estou disponível para oportunidades e colaborações</p>
+ 
+        <div class="contact-grid">
+            <div class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <h3>E-mail</h3>
+                    <a href="mailto:nicolenasc07@gmail.com">nicolenasc07@gmail.com</a>
+                </div>
+            </div>
+ 
+            <div class="contact-card">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <h3>Celular</h3>
+                    <span>(18) 996574637</span>
+                </div>
+            </div>
+ 
+            <div class="social-box">
+                <h3>Redes Sociais</h3>
+                <div class="social-links">
+                    <a href="#" class="btn linkedin" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/nicole11045" class="btn github" target="_blank">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <footer>
+        <p>&copy; 2025 - Portfólio Nicole Silva</p>
+    </footer>
+ 
+    <script>
+        // Função para fade-in ao scroll
+        const sections = document.querySelectorAll('.section');
+        const options = {
+          threshold: 0.1
+        };
+     
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('show');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, options);
+     
+        sections.forEach(section => {
+          observer.observe(section);
+        });
+      </script>
 </body>
 </html>
